@@ -1,0 +1,3 @@
+# SurfaceFlinger registers lineage.frameworks.displayservice::IDisplayService
+add_hwservice(surfaceflinger, lineage_displayservice_hwservice)
+allow surfaceflinger lineage_displayservice_hwservice:hwservice_manager find;

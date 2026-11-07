@@ -1,2 +1,3 @@
 vendor.goodix.hardware.fingerprint::IGoodixBiometricsFingerprint			u:object_r:hal_fingerprint_hwservice:s0
 vendor.qti.hardware.alarm::IAlarm                                      u:object_r:hal_alarm_qti_hwservice:s0
+lineage.frameworks.displayservice::IDisplayService                     u:object_r:lineage_displayservice_hwservice:s0
