@@ -1,1 +1,4 @@
 allow init proc_boot_reason:file r_file_perms;
+
+# init labels the /dev/block/by-name/logdump link, which is used as /metadata
+allow init logdump_partition:lnk_file relabelto;
