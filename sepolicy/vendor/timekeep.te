@@ -11,3 +11,7 @@ allow timekeep vendor_time_data_file:file create_file_perms;
 r_dir_file(timekeep, sysfs_rtc)
 
 set_prop(timekeep, vendor_timekeep_prop)
+
+# /sys/class/rtc/rtc0 resolves into the SPMI PMIC device, so spmi0-00
+# (sysfs_spmi_dev) has to be traversed to read since_epoch.
+allow timekeep sysfs_spmi_dev:dir search;

@@ -36,3 +36,8 @@ allow hal_fingerprint_default system_data_root_file:file r_file_perms;
 
 r_dir_file(hal_fingerprint_default, sysfs_leds)
 r_dir_file(hal_fingerprint_default, sysfs_battery_supply)
+
+# The HAL resolves sysfs paths through the SPMI PMIC devices (spmi0-00) and
+# the CCI camera node, which are labeled sysfs_spmi_dev and sysfs_wakeup.
+allow hal_fingerprint_default sysfs_spmi_dev:dir search;
+allow hal_fingerprint_default sysfs_wakeup:dir search;

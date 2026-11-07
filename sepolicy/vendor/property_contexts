@@ -20,6 +20,11 @@ camera.cpp.dumppreviewpayload  u:object_r:camera_prop:s0
 camera.cts.clientname           u:object_r:camera_prop:s0
 cpp.set.clock                   u:object_r:camera_prop:s0
 disable.cpp.power.collapse      u:object_r:camera_prop:s0
+camera.cpp.dumpreprocesspayload u:object_r:camera_prop:s0
+camera.display.lmax            u:object_r:camera_prop:s0
+camera.display.umax            u:object_r:camera_prop:s0
+ro.camera.req.fmq.size         u:object_r:camera_prop:s0
+ro.camera.res.fmq.size         u:object_r:camera_prop:s0
 
 # WCNSS / WLAN
 wlan.driver.              u:object_r:vendor_wcnss_prop:s0
@@ -27,9 +32,15 @@ vendor.wlan.              u:object_r:vendor_wcnss_prop:s0
 
 # Bluetooth Address
 persist.vendor.bt.address       u:object_r:vendor_bluetooth_prop:s0
+persist.vendor.btstack.enable.splita2dp u:object_r:vendor_bluetooth_prop:s0
+qcom.bluetooth.soc              u:object_r:vendor_bluetooth_prop:s0
+ro.bluetooth.hfp.ver            u:object_r:vendor_bluetooth_prop:s0
+ro.qualcomm.bt.hci_transport    u:object_r:vendor_bluetooth_prop:s0
 
 # Audio
 audio.chk.cal.us                u:object_r:vendor_audio_prop:s0
+audio.offload.disable            u:object_r:vendor_audio_prop:s0
+ro.audio.soundfx.dirac          u:object_r:vendor_audio_prop:s0
 
 # Data / Telephony
 persist.vendor.data.            u:object_r:vendor_radio_prop:s0
