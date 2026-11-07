@@ -12,3 +12,7 @@ allow mm-qcamerad fwk_sensor_hwservice:hwservice_manager find;
 get_prop(mm-qcamerad, camera_prop)
 allow mm-qcamerad self:qipcrtr_socket create_socket_perms_no_ioctl;
 allow mm-qcamerad sysfs:file r_file_perms;
+
+# The camera sysfs nodes are labeled sysfs_wakeup and sit on the path to
+# the CCI camera devices.
+allow mm-qcamerad sysfs_wakeup:dir search;
