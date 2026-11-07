@@ -16,6 +16,10 @@ cameradaemon.SaveMemAtBoot      u:object_r:camera_prop:s0
 persist.enable.max.pending.buf  u:object_r:camera_prop:s0
 persist.partial.skip            u:object_r:camera_prop:s0
 persist.cam.pp.feat.mask        u:object_r:camera_prop:s0
+camera.cpp.dumppreviewpayload  u:object_r:camera_prop:s0
+camera.cts.clientname           u:object_r:camera_prop:s0
+cpp.set.clock                   u:object_r:camera_prop:s0
+disable.cpp.power.collapse      u:object_r:camera_prop:s0
 
 # WCNSS / WLAN
 wlan.driver.              u:object_r:vendor_wcnss_prop:s0
