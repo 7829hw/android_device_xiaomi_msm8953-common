@@ -51,6 +51,8 @@ ro.audio.soundfx.dirac          u:object_r:vendor_audio_prop:s0
 
 # Data / Telephony
 persist.vendor.data.            u:object_r:vendor_radio_prop:s0
+persist.data.                   u:object_r:vendor_radio_prop:s0
+persist.rild.                   u:object_r:vendor_radio_prop:s0
 
 # Thermal engine
 persist.sys.thermal.            u:object_r:thermal_engine_prop:s0
@@ -66,3 +68,4 @@ persist.hwc.mdpcomp.enable       u:object_r:vendor_default_prop:s0
 persist.qfp                      u:object_r:vendor_default_prop:s0
 ro.fm.transmitter                u:object_r:vendor_default_prop:s0
 rild.libpath                     u:object_r:vendor_default_prop:s0
+DEVICE_PROVISIONED               u:object_r:vendor_default_prop:s0
