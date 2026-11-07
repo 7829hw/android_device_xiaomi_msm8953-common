@@ -55,3 +55,14 @@ persist.vendor.data.            u:object_r:vendor_radio_prop:s0
 # Thermal engine
 persist.sys.thermal.            u:object_r:thermal_engine_prop:s0
 sys.thermal.                    u:object_r:thermal_engine_prop:s0
+
+# Legacy properties set from vendor.prop and init.qcom.rc, no dedicated label needed
+media.aac_51_output_enabled      u:object_r:vendor_default_prop:s0
+media.msm8956hw                  u:object_r:vendor_default_prop:s0
+media.stagefright.audio.sink     u:object_r:vendor_default_prop:s0
+mm.enable.smoothstreaming        u:object_r:vendor_default_prop:s0
+mmp.enable.3g2                   u:object_r:vendor_default_prop:s0
+persist.hwc.mdpcomp.enable       u:object_r:vendor_default_prop:s0
+persist.qfp                      u:object_r:vendor_default_prop:s0
+ro.fm.transmitter                u:object_r:vendor_default_prop:s0
+rild.libpath                     u:object_r:vendor_default_prop:s0
