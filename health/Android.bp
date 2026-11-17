@@ -1,0 +1,20 @@
+cc_binary {
+    name: "android.hardware.health-service.xiaomi_msm8953",
+    relative_install_path: "hw",
+    init_rc: ["health-xiaomi_msm8953.rc"],
+    vintf_fragments: ["health-xiaomi_msm8953.xml"],
+    vendor: true,
+    overrides: ["charger"],
+    defaults: ["libhealth_aidl_impl_user"],
+    include_dirs: [
+        "system/core/healthd",
+        "system/core/healthd/include",
+        "system/core/healthd/include_charger",
+    ],
+    static_libs: ["libhealth_aidl_impl"],
+    srcs: ["main.cpp"],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+}

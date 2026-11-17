@@ -150,7 +150,7 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.qti
+    android.hardware.health-service.xiaomi_msm8953
 
 ifneq ($(AB_OTA_UPDATER),true)
 PRODUCT_PACKAGES += \
