@@ -6,3 +6,7 @@ allow qti_init_shell bluetooth_data_file:file r_file_perms;
 
 allow qti_init_shell sysfs:file write;
 allow qti_init_shell sysfs_mmc_host:file write;
+
+# post_boot sets the compute governor on the CPU->DDR latfloor devfreq
+# devices, which creates per-CPU kernel perf counters in this context.
+allow qti_init_shell self:perf_event cpu;
