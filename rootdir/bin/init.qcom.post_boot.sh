@@ -1611,6 +1611,36 @@ case "$target" in
                     done
                 done
 
+                # Kernel 4.19: the CPU->DDR bus DCVS nodes are
+                # soc:qcom,cpu-cpu-ddr-bw (bimc-bwmon2) and
+                # soc:qcom,cpu{0,4}-cpu-ddr-latfloor (arm-compute-mon).
+                # The DT boots them on "performance" (DDR pinned at max) and
+                # the soc:qcom,cpubw loop above only matches 4.9 kernels.
+                # Same tuning as the 4.9 block, zones mapped to 4.19 OPPs.
+                for cpubw in /sys/class/devfreq/soc:qcom,cpu-cpu-ddr-bw
+                do
+                    if [ -d $cpubw ]; then
+                        echo "bw_hwmon" > $cpubw/governor
+                        echo 50 > $cpubw/polling_interval
+                        echo "1609 3265 5706 6454 7095" > $cpubw/bw_hwmon/mbps_zones
+                        echo 4 > $cpubw/bw_hwmon/sample_ms
+                        echo 34 > $cpubw/bw_hwmon/io_percent
+                        echo 20 > $cpubw/bw_hwmon/hist_memory
+                        echo 10 > $cpubw/bw_hwmon/hyst_length
+                        echo 0 > $cpubw/bw_hwmon/guard_band_mbps
+                        echo 250 > $cpubw/bw_hwmon/up_scale
+                        echo 1600 > $cpubw/bw_hwmon/idle_mbps
+                    fi
+                done
+
+                # Kernel 4.19: CPU-frequency driven DDR floor
+                for latfloor in /sys/class/devfreq/soc:qcom,cpu*-cpu-ddr-latfloor
+                do
+                    if [ -d $latfloor ]; then
+                        echo "compute" > $latfloor/governor
+                    fi
+                done
+
                 for gpu_bimc_io_percent in /sys/class/devfreq/soc:qcom,gpubw/bw_hwmon/io_percent
                 do
                     echo 40 > $gpu_bimc_io_percent
